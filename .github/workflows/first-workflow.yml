@@ -1,0 +1,16 @@
+name: First Workflow
+
+# controls when the Workflow will get executed
+# workflow_dispatch event makes sure that we can manually start this WF
+
+on: workflow_dispatch
+jobs: #Note a WF can have multiple jobs
+  first-job: # Note that first-job is job name, you can use any name here
+    runs-on: ubuntu-latest # this is runner or the environment
+    steps:
+      - name : Print gretting #name of step (step 1)
+        run : echo "Hello World!" #mention the command that should run on cli
+      - name : Print Good-Bye
+        run : echo "Bye-Bye"
+
+#basic WF with 1 job and 2 steps
